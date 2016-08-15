@@ -1,0 +1,30 @@
+Controle de sessão
+
+Home pre-login
+Login
+Home pos-login
+
+Gestão de categoria
+ - Cadastro de categoria
+ - Exibição de categoria
+ - Lista(pesquisa) de categoria (sem view)
+
+Gestão de Usuário
+ - Cadastro
+ - Atualização
+
+________________________________________________________________
+
+Acessa o site
+Homecontroller/index
+	Logado
+		Home Logado
+			Deslogar
+	Deslogado
+		Home login
+
+
+echo "<pre>";
+print_r($query->result());
+echo "</pre>";
+exit(1);

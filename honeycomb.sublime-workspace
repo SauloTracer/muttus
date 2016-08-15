@@ -1,0 +1,610 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"log",
+				"logged_in"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"cate",
+				"CategoriaModel"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"dire",
+				"direcaoX"
+			],
+			[
+				"center",
+				"centerY"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"inline",
+				"inline-table"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"bac",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "application/controllers/ResponsavelController.php",
+			"settings":
+			{
+				"buffer_size": 2983,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/menuResponsavel.php",
+			"settings":
+			{
+				"buffer_size": 778,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/alteraSenha.php",
+			"settings":
+			{
+				"buffer_size": 1249,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/bootstrap.css",
+			"settings":
+			{
+				"buffer_size": 129564,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ident",
+				"Indentation: Reindent Lines"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/wamp/www/honeycomb",
+		"/D/wamp/www/honeycomb/application",
+		"/D/wamp/www/honeycomb/application/controllers",
+		"/D/wamp/www/honeycomb/application/models",
+		"/D/wamp/www/honeycomb/application/views"
+	],
+	"file_history":
+	[
+		"/D/wamp/www/honeycomb/application/views/editarResponsavel.php",
+		"/D/wamp/www/honeycomb/application/models/UsuarioModel.php",
+		"/D/wamp/www/honeycomb/application/views/loginUsuario.php",
+		"/D/wamp/www/honeycomb/application/views/usuariosResponsavel.php",
+		"/D/wamp/www/honeycomb/application/models/ResponsavelModel.php",
+		"/D/wamp/www/honeycomb/css/bootstrap.css",
+		"/D/wamp/www/honeycomb/application/views/usuario.php",
+		"/D/wamp/www/honeycomb/application/controllers/UsuarioController.php",
+		"/D/wamp/www/honeycomb/application/controllers/LoginController.php",
+		"/D/wamp/www/honeycomb/application/controllers/HomeController.php",
+		"/D/wamp/www/honeycomb/application/views/home.php",
+		"/D/wamp/www/honeycomb/application/models/LoginModel.php",
+		"/D/wamp/www/honeycomb/application/controllers/CategoriaController.php",
+		"/D/wamp/www/honeycomb/application/models/AlunoModel.php",
+		"/D/wamp/www/honeycomb/application/controllers/ResponsavelController.php",
+		"/D/wamp/www/honeycomb/application/views/categoria.php",
+		"/D/wamp/www/honeycomb/application/config/routes.php",
+		"/D/wamp/www/honeycomb/application/views/loginAluno.php",
+		"/D/wamp/www/honeycomb/application/views/menuResponsavel.php",
+		"/D/wamp/www/honeycomb/index.php",
+		"/D/wamp/www/honeycomb/application/config/database.php",
+		"/D/wamp/www/honeycomb/application/views/uploadSucess.php",
+		"/D/wamp/www/honeycomb/application/models/CategoriaModel.php",
+		"/D/wamp/www/honeycomb/application/views/showCategory.php",
+		"/D/wamp/www/honeycomb/application/views/login.php",
+		"/C/Users/Saulo/Desktop/index.html",
+		"/D/wamp/www/honeycomb/system/libraries/Upload.php",
+		"/D/wamp/www/honeycomb/application/libraries/MY_Upload.php",
+		"/D/wamp/bin/php/php5.5.12/php.ini",
+		"/D/wamp/www/honeycomb/.htaccess",
+		"/D/wamp/www/honeycomb/application/config/config.php",
+		"/D/wamp/www/honeycomb/application/models/CadastroModel.php",
+		"/D/wamp/www/honeycomb/application/views/categoria",
+		"/D/wamp/www/honeycomb/application/config/autoload.php",
+		"/D/wamp/www/honeycomb/application/views/header.php",
+		"/D/wamp/www/honeycomb/application/views/footer.php",
+		"/D/wamp/www/honeycomb/application/views/signUpView.php",
+		"/D/wamp/www/honeycomb/application/controllers/SignupController.php",
+		"/D/wamp/www/honeycomb/application/views/index.html",
+		"/D/wamp/www/reader/system/application/config/database.php",
+		"/D/wamp/www/honeycomb/application/model",
+		"/D/wamp/www/honeycomb/application/controllers/SignupController",
+		"/E/Music/Listas de Reprodução/BoasMúsicas.wpl",
+		"/D/CryEngine/GameSDK/Scripts/Entities/Default/GeomEntity.lua",
+		"/D/wamp/www/gametracer/index.html",
+		"/D/wamp/www/gametracer/templates/gameElement.tpl",
+		"/D/wamp/www/gametracer/css/main.css",
+		"/C/Users/Saulo/Videos/Tenacious D/dmd-tenacious.srt",
+		"/C/Users/Saulo/Desktop/Into the Woods 2014 DVDSCR Upscale  720p x264 AC3-FWOLF/into the woods 2014 dvdscr upscale  720p.smi",
+		"/C/Users/Saulo/Desktop/Into the Woods 2014 DVDSCR Upscale  720p x264 AC3-FWOLF/novo.smi",
+		"/E/downloads/index.php",
+		"/C/Users/Saulo/Desktop/TP/EXAMPLES/QSORT.PAS",
+		"/D/wamp/www/gametracer/gametracer.sublime-project",
+		"/D/wamp/www/reader/system/application/models/TagModel.php",
+		"/D/wamp/www/reader/system/application/controllers/tag.php",
+		"/D/wamp/www/reader/system/application/controllers/welcome.php",
+		"/D/wamp/www/reader/system/application/config/config.php",
+		"/D/wamp/www/reader/system/database/DB_driver.php",
+		"/D/wamp/www/reader/system/database/DB.php",
+		"/D/wamp/apps/phpmyadmin4.1.14/config.inc.php",
+		"/D/wamp/www/reader/index.php",
+		"/D/wamp/www/gametracer/Tecno Bubble/Tecno Bubble.html",
+		"/D/GameBuilders/Trial/main.js",
+		"/D/GameBuilders/Trial/1game.html",
+		"/C/Users/Saulo/Desktop/main.css",
+		"/C/Users/Saulo/Desktop/Thiago.html",
+		"/C/Users/Saulo/Desktop/teste.js"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"editaResponsavel",
+			"exit",
+			"btnEntrar",
+			"aluno",
+			"Aluno",
+			"aluno",
+			"Aluno",
+			"aluno",
+			"Aluno",
+			"aluno",
+			"Aluno",
+			"aluno",
+			"Aluno",
+			"Alunos",
+			"â",
+			"â€",
+			"â€‹",
+			"â€‹ ",
+			"=​\"",
+			"â€‹",
+			",",
+			"clean_file_name",
+			"function is_allowed_filetype",
+			"exit",
+			"set_error",
+			"allowed_types",
+			"is_allowed_filetype(",
+			"is_allowed_filetype()",
+			"is_allo",
+			"max_size",
+			"texto",
+			"BASEPATH",
+			"/>",
+			">\n",
+			"application_folder",
+			"-",
+			";",
+			"',\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"=\"",
+			"<",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "application/controllers/ResponsavelController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2983,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1792,
+								1792
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/views/menuResponsavel.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 778,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								587,
+								587
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/views/alteraSenha.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1249,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								733,
+								733
+							],
+							[
+								900,
+								900
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "css/bootstrap.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 129564,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								129120,
+								129120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 94127.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "honeycomb.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"bo",
+				"css\\bootstrap.css"
+			],
+			[
+				"editar",
+				"application\\views\\editarResponsavel.php"
+			],
+			[
+				"usuariomodel",
+				"application\\models\\UsuarioModel.php"
+			],
+			[
+				"menurespon",
+				"application\\views\\menuResponsavel.php"
+			],
+			[
+				"loginusua",
+				"application\\views\\loginUsuario.php"
+			],
+			[
+				"modelresponsa",
+				"application\\models\\ResponsavelModel.php"
+			],
+			[
+				"botts",
+				"css\\bootstrap.css"
+			],
+			[
+				"responsavelcontro",
+				"application\\controllers\\ResponsavelController.php"
+			],
+			[
+				"home.",
+				"application\\views\\home.php"
+			],
+			[
+				"home",
+				"application\\controllers\\HomeController.php"
+			],
+			[
+				"homecontro",
+				"application\\controllers\\HomeController.php"
+			],
+			[
+				"usuario",
+				"application\\views\\usuario.php"
+			],
+			[
+				"logincontro",
+				"application\\controllers\\LoginController.php"
+			],
+			[
+				"alunomodel",
+				"application\\models\\AlunoModel.php"
+			],
+			[
+				"boot",
+				"css/bootstrap.css"
+			],
+			[
+				"routes",
+				"application/config/routes.php"
+			],
+			[
+				"edita",
+				"application/views/editarResponsavel.php"
+			],
+			[
+				"categor",
+				"application/views/categoria.php"
+			],
+			[
+				"categora",
+				"application/controllers/CategoriaController.php"
+			],
+			[
+				"responsavelmodel",
+				"application/models/ResponsavelModel.php"
+			],
+			[
+				"res",
+				"application/controllers/ResponsavelController.php"
+			],
+			[
+				"menu",
+				"application/views/menuResponsavel.php"
+			],
+			[
+				"menure",
+				"application/views/menuResponsavel.php"
+			],
+			[
+				"index",
+				"index.php"
+			],
+			[
+				"logincontroller",
+				"application/controllers/LoginController.php"
+			],
+			[
+				"loginaluno",
+				"application/views/loginAluno.php"
+			],
+			[
+				"database",
+				"application/config/database.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 202.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

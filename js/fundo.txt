@@ -1,0 +1,24 @@
+/* FUNDO
+  * ============== */
+
+$(document).ready(function() {
+  var fundo = document.getElementById("fundo");
+  var temp, count = 0,
+    xPos, yPos;
+
+  var pi = "1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679"
+
+  for (var i = 0; i < 100; i++) {
+    if (i % 20 == 0) count += 1;
+    temp = "#fundo div:nth-child(" + (i + 1) + ")"; //create selector string
+    xPos = (count % 2 == 0) ? ((i % 20) * 100) + 50 + "px" : ((i % 20) * 100) + "px";
+    yPos = (count % 2 == 0) ? (count * 100) - (22 * (count)) + "px" : (count * 100) - (22 * (count)) + "px";
+
+    fundo.innerHTML += '<div class="hexagon"></div>';
+    $(temp).css({
+      "left": xPos,
+      "top": yPos,
+      "opacity": "." + pi[i]
+    });
+  }
+});
