@@ -1,25 +1,3 @@
-<?php include_once('header.php'); ?>
-<?php include_once('menu.php'); ?>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-<script>
-	$(document).ready(function(){
-		$(".fold").css("cursor", "pointerhand");
-		$(".fold").click(function (){
-			if($(this).hasClass("icon-folder-close")) {
-				$(this).removeClass("icon-folder-close");
-				$(this).addClass("icon-folder-open");
-				$(this).parent().children("ul").show();
-			} else {
-				$(this).removeClass("icon-folder-open");
-				$(this).addClass("icon-folder-close");
-				$(this).parent().children("ul").hide();
-			}
-		});
-	});
-</script>
-
 <?php 
 	function tree($categories, $baseurl) {
 		foreach ($categories as $category) {

@@ -17,6 +17,7 @@
 			}
 
 			$this->load->model("CategoriaModel");
+			$this->load->library('Categoria');
 		}
 
 		public function index(){
@@ -65,46 +66,18 @@
             }
         }
 
-		public function categoryTree($categoryId = null) {
-
-			$lista = $this->CategoriaModel->getCategoryByMae($categoryId);
-
-			if(count($lista) == 0) {
-				return null;
-			} 
-
-			$tree = array();
-
-			foreach ($lista as $categoria) {
-				$tree[] = array("id" => $categoria->ID_categoria, 
-						"categoria" => $categoria,
-						"SubCategoria" => $this->categoryTree($categoria->ID_categoria)
-				  );
-			}
-
-			return $tree;
-		}
-
 		public function exibirCategoria($id){
 
 			$lista = $this->CategoriaModel->getCategoryById($id);
+			$categorias = $this->categoria->categoryTree();
 
 			$data = array('texto' => $lista[0]->texto, 
 						  'image' =>  $lista[0]->imagem,
 						  'som' => $lista[0]->som, 
-						  'video' => $lista[0]->video);
+						  'video' => $lista[0]->video,
+						  'categorias' => $categorias);
 
 			$this->load->view('showCategory', $data);
-
-		}
-
-		public function menuCategoria() {
-			
-			$categorias = $this->categoryTree();
-			$data = array('baseurl' => $this->config->base_url(),
-						  'categorias' => $categorias,
-						   'logged' => $this->logged);
-			$this->load->view('categoryTree', $data);
 
 		}
 

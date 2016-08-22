@@ -7,10 +7,12 @@
 
 			if($this->session->userdata('logged_in')) {
 				$session_data = $this->session->userdata('logged_in');
-				$data['username'] = $session_data['username'];
-				$data['avatar'] = $session_data['avatar'];
-				$data['logged'] = true;
-				$this->load->view('responsavel', $data);
+				$tipo = $session_data['tipo'];
+				if ($tipo == 'usuario') {
+					redirect('UsuarioController');
+				} else {
+					redirect('ResponsavelController');
+				}				
 			} else {
 				//If no session, redirect to login page
 				$data['logged'] = false;

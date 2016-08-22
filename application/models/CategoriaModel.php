@@ -2,7 +2,7 @@
 
 class CategoriaModel extends CI_Model {
 
-	public function newCategory ($imagem, $som, $texto, $video, $libras, $emoticon, $alunoId) {
+	public function newCategory ($imagem, $som, $texto, $video, $libras, $emoticon, $usuarioId) {
 		$array = array(
 			'imagem' => $imagem,
 			'som' => $som,
@@ -10,15 +10,15 @@ class CategoriaModel extends CI_Model {
 			'video' => $video,
 			'libras' => $libras,
 			'emoticon' => $emoticon,
-			'aluno' => $alunoId
+			'usuario' => $usuarioId
 		);
 
 		$this->db->insert('categoria', $array);
 	}
 
-	public function getCategories($alunoId) {
+	public function getCategories($usuarioId) {
 		$this->db->from('categoria');
-		$this->db->where('aluno', $alunoId);
+		$this->db->where('usuario', $usuarioId);
 		$query = $this->db->get(); 
 		return $query->result();
 	}
@@ -30,7 +30,7 @@ class CategoriaModel extends CI_Model {
 		return $query->result();
 	}
 
-	public function getCategoryByMae($mae = null) {
+	public function getCategoryTree($userId = null, $mae = null) {
 		$query = $this->db->from('categoria')->where('mae', $mae)->get(); 
 		return $query->result();
 	}

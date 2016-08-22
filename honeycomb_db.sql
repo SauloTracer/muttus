@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 31-Jul-2015 às 05:04
+-- Generation Time: 16-Ago-2016 às 16:56
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -19,46 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `honeycomb`
 --
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `aluno`
---
-
-CREATE TABLE IF NOT EXISTS `aluno` (
-  `ID_aluno` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(250) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `endereco` varchar(300) NOT NULL,
-  `sexo` varchar(100) NOT NULL,
-  `telefone` varchar(12) NOT NULL,
-  `senha` varchar(100) NOT NULL,
-  `escola` varchar(250) NOT NULL,
-  `avatar` varchar(250) NOT NULL,
-  `audio` varchar(250) NOT NULL,
-  PRIMARY KEY (`ID_aluno`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Extraindo dados da tabela `aluno`
---
-
-INSERT INTO `aluno` (`ID_aluno`, `nome`, `username`, `endereco`, `sexo`, `telefone`, `senha`, `escola`, `avatar`, `audio`) VALUES
-(1, '', 'mari', '', '', '', '1234', '', '1.jpg', '');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `aluno_responsavel`
---
-
-CREATE TABLE IF NOT EXISTS `aluno_responsavel` (
-  `ID_aluno` int(11) NOT NULL,
-  `ID_responsavel` int(11) NOT NULL,
-  KEY `ID_aluno` (`ID_aluno`,`ID_responsavel`),
-  KEY `ID_responsavel` (`ID_responsavel`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -109,19 +69,78 @@ CREATE TABLE IF NOT EXISTS `responsavel` (
   `telefone` varchar(30) NOT NULL,
   `senha` varchar(15) NOT NULL,
   `avatar` varchar(250) NOT NULL,
-  PRIMARY KEY (`ID_responsavel`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `email` varchar(255) NOT NULL,
+  `dt_nascimento` date NOT NULL,
+  PRIMARY KEY (`ID_responsavel`),
+  FULLTEXT KEY `email` (`email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `responsavel`
+--
+
+INSERT INTO `responsavel` (`ID_responsavel`, `nome`, `username`, `endereco`, `sexo`, `telefone`, `senha`, `avatar`, `email`, `dt_nascimento`) VALUES
+(1, 'Asimov', 'asimov', 'Interwebs', 'M', '22222222', '1234', '', 'asi.mov@mail.com', '1919-10-04'),
+(2, 'Tio Patinhas', 'tio_patinhas', 'Banco', 'M', '', '$money$', '', '', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `ID_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(250) NOT NULL,
+  `sexo` varchar(100) NOT NULL,
+  `avatar` varchar(250) NOT NULL,
+  `audio` varchar(250) NOT NULL,
+  PRIMARY KEY (`ID_usuario`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`ID_usuario`, `nome`, `sexo`, `avatar`, `audio`) VALUES
+(1, 'Leon', 'M', '', ''),
+(2, 'Huguinho', 'M', '', ''),
+(3, 'Zézinho', 'M', '', ''),
+(4, 'Luizinho', 'M', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario_responsavel`
+--
+
+CREATE TABLE IF NOT EXISTS `usuario_responsavel` (
+  `ID_usuario` int(11) NOT NULL,
+  `ID_responsavel` int(11) NOT NULL,
+  KEY `ID_aluno` (`ID_usuario`,`ID_responsavel`),
+  KEY `ID_responsavel` (`ID_responsavel`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuario_responsavel`
+--
+
+INSERT INTO `usuario_responsavel` (`ID_usuario`, `ID_responsavel`) VALUES
+(1, 1),
+(2, 2),
+(3, 2),
+(4, 2);
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Limitadores para a tabela `aluno_responsavel`
+-- Limitadores para a tabela `usuario_responsavel`
 --
-ALTER TABLE `aluno_responsavel`
-  ADD CONSTRAINT `aluno_responsavel_ibfk_1` FOREIGN KEY (`ID_aluno`) REFERENCES `aluno` (`ID_aluno`),
-  ADD CONSTRAINT `aluno_responsavel_ibfk_2` FOREIGN KEY (`ID_responsavel`) REFERENCES `responsavel` (`ID_responsavel`);
+ALTER TABLE `usuario_responsavel`
+  ADD CONSTRAINT `usuario_responsavel_ibfk_1` FOREIGN KEY (`ID_usuario`) REFERENCES `usuario` (`ID_usuario`),
+  ADD CONSTRAINT `usuario_responsavel_ibfk_2` FOREIGN KEY (`ID_responsavel`) REFERENCES `responsavel` (`ID_responsavel`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
