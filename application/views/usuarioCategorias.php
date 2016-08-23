@@ -5,7 +5,7 @@
 			$sub = $category["SubCategoria"];
 
 			echo "<li>
-					<a href='" . base_url() . "/index.php/CategoriaController/exibirCategoria/" . $id . "'>" 
+					<a href='" . base_url() . "index.php/CategoriaController/exibirCategoria/" . $id . "'>" 
 					. $category["categoria"]->texto . "<br/>
 					<img src='" . base_url() . "uploads/" . $category["categoria"]->imagem . "' width='100' height='100'/></a><br/>";
 			if(count($sub) > 0) {

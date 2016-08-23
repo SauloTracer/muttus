@@ -20,7 +20,7 @@
 				Seu navegador não suporta o elemento <code>video</code>.
 			</video>
 
-			<audio src="<?php echo $som; ?>" controls loop>
+			<audio src="<?php echo $som; ?>" controls loop/>
 				 <p>Seu nevegador não suporta o elemento audio.</p>
 			</audio>
 		</div>
