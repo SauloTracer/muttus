@@ -13,9 +13,10 @@ class Categoria {
 	public function categoryTree($userId = null, $categoryId = null) {
 
 		$lista = $this->CI->CategoriaModel->getCategoryTree($userId, $categoryId);
-		if(count($lista) == 0) return null;
-		
 		$tree = array();
+
+		if(count($lista) == 0) return $tree;
+		
 		foreach ($lista as $categoria) {
 			$tree[] = array("id" => $categoria->ID_categoria, 
 				"categoria" => $categoria,

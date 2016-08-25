@@ -31,7 +31,12 @@ class CategoriaModel extends CI_Model {
 	}
 
 	public function getCategoryTree($userId = null, $mae = null) {
-		$query = $this->db->from('categoria')->where('mae', $mae)->get(); 
+		$this->db->from('categoria');
+		$this->db->where('mae', $mae);
+		if(!empty($userId)){
+			$this->db->where('usuario', $userId);
+		}
+		$query = $this->db->get();
 		return $query->result();
 	}
 		
