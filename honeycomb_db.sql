@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Ago-2016 às 16:56
+-- Generation Time: 28-Ago-2016 às 22:40
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `categoria`
 --
 
+DROP TABLE IF EXISTS `categoria`;
 CREATE TABLE IF NOT EXISTS `categoria` (
   `ID_categoria` int(11) NOT NULL AUTO_INCREMENT,
   `imagem` varchar(250) NOT NULL,
@@ -35,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   `libras` varchar(250) NOT NULL,
   `emoticon` varchar(250) NOT NULL,
   `mae` int(11) DEFAULT NULL,
-  `aluno` int(11) NOT NULL,
+  `usuario` int(11) NOT NULL,
   PRIMARY KEY (`ID_categoria`),
   KEY `mae` (`mae`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
@@ -44,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `categoria` (
 -- Extraindo dados da tabela `categoria`
 --
 
-INSERT INTO `categoria` (`ID_categoria`, `imagem`, `som`, `texto`, `video`, `libras`, `emoticon`, `mae`, `aluno`) VALUES
+INSERT INTO `categoria` (`ID_categoria`, `imagem`, `som`, `texto`, `video`, `libras`, `emoticon`, `mae`, `usuario`) VALUES
 (1, 'imagem.png', 'som.wav', 'Teste', './uploads/video.mp4', './uploads/video.mp4', './uploads/gif.gif', NULL, 1),
 (2, 'Garfield_the_Cat.png', 'picapau.wav', 'Categoria DU MAL!!!!', 'DebonairGalio.mp4', 'DebonairGalio.mp4', 'rainbow.bmp', NULL, 1),
 (3, 'familia.png', '', 'Familia', '', '', '', NULL, 1),
@@ -60,6 +61,7 @@ INSERT INTO `categoria` (`ID_categoria`, `imagem`, `som`, `texto`, `video`, `lib
 -- Estrutura da tabela `responsavel`
 --
 
+DROP TABLE IF EXISTS `responsavel`;
 CREATE TABLE IF NOT EXISTS `responsavel` (
   `ID_responsavel` int(250) NOT NULL AUTO_INCREMENT,
   `nome` varchar(150) NOT NULL,
@@ -80,8 +82,8 @@ CREATE TABLE IF NOT EXISTS `responsavel` (
 --
 
 INSERT INTO `responsavel` (`ID_responsavel`, `nome`, `username`, `endereco`, `sexo`, `telefone`, `senha`, `avatar`, `email`, `dt_nascimento`) VALUES
-(1, 'Asimov', 'asimov', 'Interwebs', 'M', '22222222', '1234', '', 'asi.mov@mail.com', '1919-10-04'),
-(2, 'Tio Patinhas', 'tio_patinhas', 'Banco', 'M', '', '$money$', '', '', '0000-00-00');
+(1, 'Asimov', 'asimov', 'Interwebs', 'M', '22222222', '1234', 'foto_1.jpg', 'asi.mov@mail.com', '1919-10-04'),
+(2, 'Tio Patinhas', 'tio_patinhas', 'Banco', 'M', '', '$money$', 'foto_2.jpg', 'tio_patinhas@banco.com', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -89,6 +91,7 @@ INSERT INTO `responsavel` (`ID_responsavel`, `nome`, `username`, `endereco`, `se
 -- Estrutura da tabela `usuario`
 --
 
+DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `ID_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(250) NOT NULL,
@@ -114,6 +117,7 @@ INSERT INTO `usuario` (`ID_usuario`, `nome`, `sexo`, `avatar`, `audio`) VALUES
 -- Estrutura da tabela `usuario_responsavel`
 --
 
+DROP TABLE IF EXISTS `usuario_responsavel`;
 CREATE TABLE IF NOT EXISTS `usuario_responsavel` (
   `ID_usuario` int(11) NOT NULL,
   `ID_responsavel` int(11) NOT NULL,
