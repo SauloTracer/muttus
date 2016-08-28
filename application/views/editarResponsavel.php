@@ -5,10 +5,12 @@
 		<?php require_once("menuResponsavel.php"); ?>
 		<div class="mainContent clearfix" style="width:73%;padding-left:67px;">
 			<div class="userBox" style="padding-left:35%">
-				<img src="<?php echo base_url() . "img/responsavel.png" ?>">
+				<img src="<?php echo base_url() . $responsavel->avatar; ?>" style="width:100px; height:100px;">
 			</div>
 			<div style="padding-left:10%;">
-				<?php echo form_open('ResponsavelController/validar'); ?>
+				<?php echo validation_errors(); ?>
+			
+				<?php echo form_open_multipart('ResponsavelController/validar'); ?>
 					<ul class="lista listaEditaResponsavel">
 						<li>
 							Nome:
@@ -61,8 +63,8 @@
 						<li>
 							Imagem: 
 							<div class="editaResponsavel" style="overflow:hide;">
-								<input type="file" name="file" id="file" class="inputfile" />
-								<label id="teste" for="file">Selecionar arquivo...</label>
+								<input type="file" name="userfile" id="userfile" class="inputfile" />
+								<label id="teste" for="userfile">Selecionar arquivo...</label>
 							</div>
 						</li>
 					</ul>
@@ -78,8 +80,8 @@
 </div>
 
 <script type="text/javascript">
-	$("#file").change(function(){
-		file = $("#file").val();
+	$("#userfile").change(function(){
+		file = $("#userfile").val();
 		re = /\w+\.\w+/;
 		r = re.exec(file);
 		if (r) file = r[0];

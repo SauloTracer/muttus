@@ -3,16 +3,32 @@
 	class ResponsavelController extends CI_Controller {
 		
 		public function index() {
-			if(empty($this->session->userdata('logged_in'))) { redirect('LoginController'); }
-			$this->load->view('responsavel');
+			$id = $this->verificaResponsavel();
+			
+			$this->load->model('ResponsavelModel');
+			
+			$responsavel = $this->ResponsavelModel->getResponsavelById($id);
+			if (empty($responsavel->avatar)) $responsavel->avatar = "img/responsavel.png";
+
+			$data = Array(
+				'responsavel' => $responsavel
+			);
+			
+			$this->load->view('responsavel', $data);
 		}
 
-		public function editar() {
+		public function editar($post = false) {
 			$id = $this->verificaResponsavel();
 
 			$this->load->model("ResponsavelModel");
 			$responsavel = $this->ResponsavelModel->getResponsavelById($id);
 			
+			if (empty($responsavel->avatar)) {
+				$responsavel->avatar = "img/responsavel.png";
+			} else {
+				$responsavel->avatar = "uploads/" . $responsavel->avatar;
+			}
+
 			$dtNascimento = $responsavel->dt_nascimento;
 			if ($dtNascimento != '0000-00-00') {
 				$dtNascimento = DateTime::createFromFormat('Y-m-d', $dtNascimento);
@@ -20,7 +36,8 @@
 			}
 
 			$data = array (
-				"responsavel" => $responsavel
+				"responsavel" => $responsavel,
+				"post"		  => $post
 			);
 
 			$this->load->view('editarResponsavel', $data);
@@ -30,20 +47,43 @@
 			$id = $this->verificaResponsavel();
 
 			if ($id) {
-				
-				$dtNascimento = $_POST['dt_nascimento'];
-				if ($dtNascimento) {
-					$dtNascimento = DateTime::createFromFormat('d/m/Y', $dtNascimento);
+
+				$filename = "";
+				if($_FILES['userfile']['error'] == 0) {
+					$ext = substr($_FILES['userfile']['name'],-4);
+					$filename = "foto_$id" . $ext;
+
+					$config['upload_path'] 		= './uploads/';
+	                $config['allowed_types'] 	= 'gif|jpg|png';
+	                $config['max_size']  		= '1024';
+	                $config['file_name'] 		= $filename;
+	                $config['overwrite'] 		= true;
+
+	                $this->load->library('upload', $config);
+	                if( ! $this->upload->do_upload('userfile')){
+	                    $error = array('error' => $this->upload->display_errors());
+	                    echo "<pre>";
+						print_r($error);
+						echo "</pre>";
+	                } else {
+	                    $data = array('arquivo_data' => $this->upload->data());
+	                }
 				}
+
+				$dtNascimento = $_POST['dt_nascimento'];
+				if (!empty($dtNascimento) && $dtNascimento != '0000-00-00') {
+					$dtNascimento = DateTime::createFromFormat('d/m/Y', $dtNascimento);	
+					$dtNascimento = $dtNascimento->format('Y-m-d');
+				} 
 
 				$data = Array(
 					"nome" => $_POST['nome'],
 					"endereco" => $_POST['endereco'],
 					"sexo"	=> $_POST['sexo'],
 					"telefone" => $_POST['telefone'],
-					"avatar" => $_POST['file'],
+					"avatar" => $filename,
 					"email"	=> $_POST['email'],
-					"dt_nascimento" => $dtNascimento->format('Y-m-d')
+					"dt_nascimento" => $dtNascimento
 				);
 				$this->load->model("ResponsavelModel");
 				$this->ResponsavelModel->atualizaResponsavel($id, $data);
@@ -53,11 +93,51 @@
 		}
 
 		public function validar() {
-			$this->_editar();
+			$this->load->helper(array('form', 'url'));
+            $this->load->library('form_validation');
+
+          	$rules = array(
+		        array(
+		                'field' => 'nome',
+		                'label' => 'Nome',
+		                'rules' => 'required'
+		        ),
+		        array(
+		                'field' => 'email',
+		                'label' => 'Email',
+		                'rules' => 'required',
+		                'errors' => array(
+		                        'required' => 'Você deve informar um %s.',
+		                ),
+		        ),
+		        array(
+		                'field' => 'endereco',
+		                'label' => 'Endereço',
+		                'rules' => 'required'
+		        )
+			);
+			$this->form_validation->set_rules($rules);
+
+            if ($this->form_validation->run() == FALSE) {
+                $this->editar($_POST);
+            } else {
+				$this->_editar();
+            }
 		}
 
 		public function validarSenha() {
-			$this->_alterarSenha();
+			$this->load->helper(array('form', 'url'));
+            $this->load->library('form_validation');
+
+            $this->form_validation->set_rules('username', 'Username', 'required', Array("required" => "Mensagem de erro."));
+			$this->form_validation->set_rules('password', 'Password', 'required');
+			$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
+
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('myform');
+            } else {
+				$this->_alterarSenha();
+			}
 		}
 
 		public function alterarSenha() {
