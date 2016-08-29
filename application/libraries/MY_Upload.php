@@ -12,7 +12,7 @@
 	 * @link		https://github.com/stvnthomas/CodeIgniter-2.1-Multi-Upload
 	 */
 
-	require_once "C:/wamp/www/honeycomb/system/libraries/Upload.php";
+	require_once "./system/libraries/Upload.php";
 
 		class MY_Upload extends CI_Upload {
 			
