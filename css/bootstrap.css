@@ -6282,7 +6282,7 @@ a:hover, a:active, a:visited, a:link {
 .editaResponsavel {
   display:inline-block; 
   float:right; 
-  padding-right: 300px;
+  /*padding-right: 300px;*/
 }
 
 .alteraSenha {

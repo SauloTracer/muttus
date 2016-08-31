@@ -18,8 +18,16 @@
 							Listar Usuários
 						</a>
 					</li>
-					<li>Criar Usuários</li>
+					<li>Criar Usuário</li>
 					<li>Editar Usuário</li>
+				</ul>
+			</div>
+		</li>
+		<li><a href="#menuGerenciarCategorias" data-toggle="collapse">Gerenciar Categorias</a>
+			<div class="collapse" id="menuGerenciarCategorias">
+				<ul class="lista">
+					<li>Criar Categoria</li>
+					<li>Editar Categoria</li>
 				</ul>
 			</div>
 		</li>

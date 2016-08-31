@@ -5,7 +5,7 @@
 		<?php require_once("menuResponsavel.php"); ?>
 		<div class="mainContent clearfix" style="width:73%;padding-left:67px;">
 			<div class="userBox" style="padding-left:35%">
-				<img src="<?php echo base_url() . "img/responsavel.png" ?>">
+				<img src="<?php echo base_url() . $responsavel->avatar; ?>" style="width:100px; height:100px;">
 			</div>
 			<div style="padding-left:10%;">
 				<?php echo form_open('ResponsavelController/validarSenha'); ?>

@@ -1,10 +1,16 @@
 <?php 
 
 	class ResponsavelController extends CI_Controller {
+
+		private $usuario = null;
 		
+		public function __construct() {
+			parent::__construct();
+			$this->usuario = $this->session->userdata('selected');
+		}
+
 		public function index() {
 			$id = $this->verificaResponsavel();
-			
 			$this->load->model('ResponsavelModel');
 			
 			$responsavel = $this->ResponsavelModel->getResponsavelById($id);
@@ -144,6 +150,11 @@
 			$idResponsavel = $this->verificaResponsavel();
 			$this->load->model("ResponsavelModel");
 			$responsavel = $this->ResponsavelModel->getResponsavelById($idResponsavel);
+			if (empty($responsavel->avatar)) {
+				$responsavel->avatar = "img/responsavel.png";
+			} else {
+				$responsavel->avatar = "uploads/" . $responsavel->avatar;
+			}
 			$data = Array ("responsavel" => $responsavel);
 
 			$this->load->view('alteraSenha', $data);
@@ -165,7 +176,15 @@
 			$idResponsavel = $this->verificaResponsavel();
 			$this->load->model('UsuarioModel');
 			$usuarios = $this->UsuarioModel->listaUsuariosPorResponsavel($idResponsavel);
-			$data = Array( "usuarios" => $usuarios);
+			$selected = null;
+			if($this->usuario) {
+				$selected = $this->UsuarioModel->getUsuarioById($this->usuario);
+				$selected = $selected->nome;
+			}
+			$data = Array( 
+					"usuarios" => $usuarios,
+					"selected" => $selected
+				);
 			$this->load->view("usuariosResponsavel", $data);
 		}
 
@@ -176,6 +195,12 @@
 			$id = (empty($userData['id'])) ? false : $userData['id']; 		  								//Recupera o id do responsavel
 			if (!$id) { redirect('LoginController'); } 														//Verifica se o id esta preenchido
 			return $id;
+		}
+
+		public function selecionarUsuario($userId = null) {
+			$this->session->set_userdata('selected', $userId);
+			$this->usuario = $userId;
+			$this->listarUsuarios();
 		}
 
 	}

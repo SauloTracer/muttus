@@ -81,4 +81,12 @@
 
 		}
 
+		public function criarCategoria() {
+
+		}
+
+		public function editarCategoria() {
+			
+		}
+
 	}

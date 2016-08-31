@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="row topicText" style="background-color: #83B999; ">
 		<?php require_once("menuResponsavel.php"); ?>
-		<div class="mainContent clearfix" style="width:73%;padding-left:67px;">
+		<div class="mainContent clearfix">
 			<div class="userBox" style="padding-left:35%">
 				<img src="<?php echo base_url() . $responsavel->avatar; ?>" style="width:100px; height:100px;">
 			</div>
