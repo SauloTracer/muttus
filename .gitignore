@@ -42,6 +42,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-#Other directories
-uploads
+# Other directories
+uploads/*
 .phpintel
