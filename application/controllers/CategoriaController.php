@@ -82,11 +82,23 @@
 		}
 
 		public function criarCategoria() {
-
+			$this->session->set_userdata("action", "criarCategoria");
+			$this->verificaUsuario();
+			$this->load->view('criarCategoria');
+			$this->session->set_userdata("action", null);
 		}
 
 		public function editarCategoria() {
-			
+			$this->session->set_userdata("action", "editarCategoria");
+			$this->verificaUsuario();
+			$this->load->view('editarCategoria');
+			$this->session->set_userdata("action", null);
+		}
+
+		public function verificaUsuario() {
+			if(!$this->session->userdata("selected")) {
+				redirect("ResponsavelController/listarUsuarios");
+			}
 		}
 
 	}

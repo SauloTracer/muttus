@@ -200,7 +200,20 @@
 		public function selecionarUsuario($userId = null) {
 			$this->session->set_userdata('selected', $userId);
 			$this->usuario = $userId;
-			$this->listarUsuarios();
+			
+			$action = $this->session->userdata('action');
+
+			switch ($action) {
+				case 'criarCategoria':
+					redirect('CategoriaController/criarCategoria');
+					break;
+				case 'editarCategoria':
+					redirect('CategoriaController/editarCategoria');
+					break;
+				default:
+					$this->listarUsuarios();
+					break;
+			}
 		}
 
 	}

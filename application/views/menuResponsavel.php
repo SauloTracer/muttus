@@ -26,8 +26,18 @@
 		<li><a href="#menuGerenciarCategorias" data-toggle="collapse">Gerenciar Categorias</a>
 			<div class="collapse" id="menuGerenciarCategorias">
 				<ul class="lista">
-					<li>Criar Categoria</li>
-					<li>Editar Categoria</li>
+					<li>
+						<a href="<?php echo base_url() . "index.php/CategoriaController/criarCategoria" ?>">
+							Criar Categoria
+						</a>
+					</li>
+
+					<li>
+						<a href="<?php echo base_url() . "index.php/CategoriaController/editarCategoria" ?>">
+							Editar Categoria
+						</a>
+					</li>
+
 				</ul>
 			</div>
 		</li>
