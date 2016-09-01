@@ -83,20 +83,30 @@
 
 		public function criarCategoria() {
 			$this->session->set_userdata("action", "criarCategoria");
-			$this->verificaUsuario();
-			$this->load->view('criarCategoria');
+			
+			$userId = $this->verificaUsuario();
+			$categorias = $this->categoria->categoryTree($userId);
+			$data = Array("arvore" => $categorias, "selected" => $userId);
+			
+			$this->load->view('criarCategoria', $data);
 			$this->session->set_userdata("action", null);
 		}
 
 		public function editarCategoria() {
 			$this->session->set_userdata("action", "editarCategoria");
-			$this->verificaUsuario();
-			$this->load->view('editarCategoria');
+
+			$userId = $this->verificaUsuario();
+			$categorias = $this->categoria->categoryTree($userId);
+			$data = Array("arvore" => $categorias, "selected" => $userId);
+			
+			$this->load->view('editarCategoria', $data);
 			$this->session->set_userdata("action", null);
 		}
 
 		public function verificaUsuario() {
-			if(!$this->session->userdata("selected")) {
+			if($this->session->userdata("selected")) {
+				return $this->session->userdata("selected");
+			} else {
 				redirect("ResponsavelController/listarUsuarios");
 			}
 		}
